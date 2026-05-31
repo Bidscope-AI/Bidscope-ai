@@ -125,12 +125,17 @@ export default function BidScope() {
             <div style={{ fontSize: 9, color: "#334155", letterSpacing: 2 }}>CONSTRUCTION ESTIMATING PLATFORM</div>
           </div>
         </div>
-        {step === "results" && (
-          <div style={{ display: "flex", gap: 10 }} className="no-print">
-            <button onClick={() => { setStep("input"); setAnalysis(null); setItems([]); }} style={{ padding: "7px 16px", background: "transparent", border: "1px solid #1e2d40", color: "#64748b", cursor: "pointer", fontSize: 11, letterSpacing: 1, fontFamily: "inherit" }}>← NEW BID</button>
-            <button onClick={printBid} style={{ padding: "7px 16px", background: "#f59e0b", border: "none", color: "#000", cursor: "pointer", fontSize: 11, letterSpacing: 1, fontFamily: "'Bebas Neue',sans-serif" }}>PRINT / EXPORT</button>
-          </div>
-        )}
+        <div style={{ display: "flex", gap: 10 }} className="no-print">
+          {step === "results" && (
+            <>
+              <button onClick={() => { setStep("input"); setAnalysis(null); setItems([]); }} style={{ padding: "7px 16px", background: "transparent", border: "1px solid #1e2d40", color: "#64748b", cursor: "pointer", fontSize: 11, letterSpacing: 1, fontFamily: "inherit" }}>← NEW BID</button>
+              <button onClick={printBid} style={{ padding: "7px 16px", background: "transparent", border: "1px solid #1e2d40", color: "#64748b", cursor: "pointer", fontSize: 11, letterSpacing: 1, fontFamily: "'Bebas Neue',sans-serif" }}>PRINT / EXPORT</button>
+            </>
+          )}
+          <a href="https://buy.stripe.com/cNi00ccWr1QY1DQbxgdby00" target="_blank" rel="noopener noreferrer" style={{ padding: "7px 20px", background: "#f59e0b", border: "none", color: "#000", cursor: "pointer", fontSize: 12, letterSpacing: 1, fontFamily: "'Bebas Neue',sans-serif", textDecoration: "none", display: "flex", alignItems: "center" }}>
+            SUBSCRIBE $99/MO
+          </a>
+        </div>
       </div>
 
       {/* INPUT STEP */}
