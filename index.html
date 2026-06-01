@@ -1,1 +1,223 @@
-file:///C:/Users/TONY/Downloads/bidscope-simple.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BidScope AI - Construction Estimating</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #080c10; color: #e2e8f0; font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+    .header { background: #060910; border-bottom: 1px solid #1a2030; padding: 16px 28px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { background: #f59e0b; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 3px; }
+    .logo-sub { font-size: 9px; color: #334155; letter-spacing: 2px; }
+    .subscribe-btn { padding: 8px 20px; background: #f59e0b; color: #000; text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 2px; }
+    .container { max-width: 700px; margin: 0 auto; padding: 48px 24px; }
+    .headline { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 4px; line-height: 1; margin-bottom: 12px; }
+    .headline span { color: #f59e0b; }
+    .subhead { font-size: 13px; color: #475569; line-height: 1.7; margin-bottom: 40px; }
+    .form-group { margin-bottom: 20px; }
+    label { font-size: 10px; letter-spacing: 2px; color: #475569; display: block; margin-bottom: 8px; text-transform: uppercase; }
+    input, textarea, select { width: 100%; background: #0d1117; border: 1px solid #1e2d40; color: #e2e8f0; padding: 12px 14px; font-size: 13px; font-family: 'DM Sans', sans-serif; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #f59e0b; }
+    textarea { min-height: 140px; resize: vertical; line-height: 1.7; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .submit-btn { width: 100%; padding: 18px; background: #f59e0b; color: #000; border: none; cursor: pointer; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 4px; margin-top: 8px; transition: opacity 0.2s; }
+    .submit-btn:hover { opacity: 0.9; }
+    .how-it-works { background: #0d1117; border: 1px solid #1e2d40; padding: 28px; margin-top: 48px; }
+    .how-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; color: #f59e0b; margin-bottom: 20px; }
+    .step { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+    .step-num { background: #f59e0b; color: #000; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 16px; flex-shrink: 0; }
+    .step-text { font-size: 13px; color: #94a3b8; line-height: 1.6; }
+    .step-text strong { color: #e2e8f0; }
+    .pricing { background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.03)); border: 1px solid rgba(245,158,11,0.2); padding: 28px; margin-top: 24px; text-align: center; }
+    .price { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: #f59e0b; line-height: 1; }
+    .price-sub { font-size: 12px; color: #64748b; margin-top: 4px; margin-bottom: 20px; }
+    .features { list-style: none; margin-bottom: 24px; }
+    .features li { font-size: 13px; color: #94a3b8; padding: 6px 0; border-bottom: 1px solid #1e2d40; }
+    .features li:before { content: "✓ "; color: #f59e0b; }
+    .success { display: none; background: rgba(52,211,153,0.1); border: 1px solid #064e3b; padding: 28px; text-align: center; margin-top: 24px; }
+    .success h3 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #34d399; letter-spacing: 2px; margin-bottom: 12px; }
+    .success p { font-size: 13px; color: #94a3b8; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">🏗</div>
+    <div>
+      <div class="logo-text">BIDSCOPE <span style="color:#f59e0b">AI</span></div>
+      <div class="logo-sub">CONSTRUCTION ESTIMATING PLATFORM</div>
+    </div>
+  </div>
+  <a href="https://buy.stripe.com/8x29AMg8D3Z6beqatcdby01" class="subscribe-btn">SUBSCRIBE $99/MO</a>
+</div>
+
+<div class="container">
+  <div class="headline">GET YOUR BID<br /><span>ESTIMATED TODAY.</span></div>
+  <div class="subhead">Submit your project details below. Our AI estimator will analyze your scope and send you a complete line-item bid estimate within 24 hours.</div>
+
+  <div id="form-section">
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" id="name" placeholder="John Smith" />
+    </div>
+
+    <div class="grid2">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="john@company.com" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="(555) 000-0000" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Company Name</label>
+      <input type="text" id="company" placeholder="Smith General Contractors" />
+    </div>
+
+    <div class="grid2">
+      <div class="form-group">
+        <label>Project Type</label>
+        <select id="project-type">
+          <option value="">Select type...</option>
+          <option>New Construction - Residential</option>
+          <option>New Construction - Commercial</option>
+          <option>Tenant Improvement</option>
+          <option>Renovation / Remodel</option>
+          <option>Addition</option>
+          <option>Civil / Site Work</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Project Size (SF)</label>
+        <input type="text" id="size" placeholder="e.g. 5,000 SF" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Project Location</label>
+      <input type="text" id="location" placeholder="e.g. Miami, FL" />
+    </div>
+
+    <div class="form-group">
+      <label>Labor Type</label>
+      <select id="labor">
+        <option value="">Select...</option>
+        <option>Union Labor</option>
+        <option>Non-Union Labor</option>
+        <option>Mixed</option>
+        <option>Not Sure</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Scope of Work — Describe what needs to be built or done</label>
+      <textarea id="scope" placeholder="Example: Demo existing interior, new steel stud framing and drywall, drop ceiling grid with tiles, polished concrete floors, full electrical rough-in and trim, plumbing for 2 bathrooms, HVAC ductwork and units..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Special Requirements or Notes (optional)</label>
+      <textarea id="notes" style="min-height:80px" placeholder="Prevailing wage, LEED requirements, phased construction, specific materials, bid due date..."></textarea>
+    </div>
+
+    <button class="submit-btn" onclick="submitForm()">SUBMIT FOR ESTIMATE →</button>
+  </div>
+
+  <div class="success" id="success-msg">
+    <h3>✓ REQUEST RECEIVED!</h3>
+    <p>Thank you! We've received your project details and will send your complete AI-generated estimate to your email within <strong>24 hours</strong>.<br /><br />
+    Questions? Reply to the confirmation email or call us directly.</p>
+  </div>
+
+  <div class="how-it-works">
+    <div class="how-title">HOW IT WORKS</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Submit your project details</strong> — fill out the form above with your scope of work and project info.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>AI analyzes your scope</strong> — our construction AI breaks down every trade, quantity, and unit cost.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Receive your estimate</strong> — get a complete line-item bid with overhead and profit built in, ready to submit.</div>
+    </div>
+  </div>
+
+  <div class="pricing">
+    <div style="font-size:10px;letter-spacing:2px;color:#475569;margin-bottom:8px">MONTHLY SUBSCRIPTION</div>
+    <div class="price">$99</div>
+    <div class="price-sub">per month — cancel anytime</div>
+    <ul class="features">
+      <li>Unlimited bid estimates</li>
+      <li>Full line-item breakdowns</li>
+      <li>Overhead & profit calculator</li>
+      <li>Risk flag analysis</li>
+      <li>24-hour turnaround</li>
+    </ul>
+    <a href="https://buy.stripe.com/8x29AMg8D3Z6beqatcdby01" class="subscribe-btn" style="display:inline-block">START SUBSCRIPTION →</a>
+  </div>
+</div>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const company = document.getElementById('company').value;
+  const projectType = document.getElementById('project-type').value;
+  const size = document.getElementById('size').value;
+  const location = document.getElementById('location').value;
+  const labor = document.getElementById('labor').value;
+  const scope = document.getElementById('scope').value;
+  const notes = document.getElementById('notes').value;
+
+  if (!name || !email || !scope) {
+    alert('Please fill in your name, email, and scope of work.');
+    return;
+  }
+
+  const subject = encodeURIComponent(`BidScope AI - New Estimate Request from ${name}`);
+  const body = encodeURIComponent(`NEW BID ESTIMATE REQUEST
+========================
+
+NAME: ${name}
+EMAIL: ${email}
+PHONE: ${phone}
+COMPANY: ${company}
+
+PROJECT DETAILS
+---------------
+Type: ${projectType}
+Size: ${size}
+Location: ${location}
+Labor: ${labor}
+
+SCOPE OF WORK:
+${scope}
+
+SPECIAL NOTES:
+${notes}
+
+========================
+Submitted via BidScope AI`);
+
+  window.location.href = `mailto:megatec11@aol.com?subject=${subject}&body=${body}`;
+
+  document.getElementById('form-section').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
