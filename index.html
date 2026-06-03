@@ -187,35 +187,22 @@ function submitForm() {
     return;
   }
 
-  const subject = encodeURIComponent(`BidScope AI - New Estimate Request from ${name}`);
-  const body = encodeURIComponent(`NEW BID ESTIMATE REQUEST
-========================
-
-NAME: ${name}
-EMAIL: ${email}
-PHONE: ${phone}
-COMPANY: ${company}
-
-PROJECT DETAILS
----------------
-Type: ${projectType}
-Size: ${size}
-Location: ${location}
-Labor: ${labor}
-
-SCOPE OF WORK:
-${scope}
-
-SPECIAL NOTES:
-${notes}
-
-========================
-Submitted via BidScope AI`);
-
-  window.location.href = `mailto:megatec11@aol.com?subject=${subject}&body=${body}`;
-
-  document.getElementById('form-section').style.display = 'none';
-  document.getElementById('success-msg').style.display = 'block';
+  fetch("https://formspree.io/f/mlgkenjk", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: name, email: email, phone: phone, company: company,
+      projectType: projectType, size: size, location: location,
+      labor: labor, scope: scope, notes: notes
+    })
+  }).then(res => {
+    if (res.ok) {
+      document.getElementById('form-section').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    } else {
+      alert('Submission failed. Please try again.');
+    }
+  }).catch(() => alert('Submission failed. Please try again.'));
 }
 </script>
 
